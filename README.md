@@ -1,3 +1,10 @@
+#ALC comments and links
+- [Getting Started with Fullstack Continuous Deployments \- AWS Amplify](https://docs.aws.amazon.com/amplify/latest/userguide/deploy-backend.html)
+- [API \(GraphQL\) \- Overview \- Amplify Docs](https://docs.amplify.aws/cli/graphql-transformer/overview)
+- [API \(GraphQL\) \- Fetch data \- Amplify Docs](https://docs.amplify.aws/lib/graphqlapi/query-data/q/platform/js#using-aws-appsync-sdk)
+
+
+
 # Create-react-app with AWS Amplify Auth 
 
 This auth starter implements withAuthenticator HOC to provide a basic authentication flow for signing up signing in users as well as protected client side routing using AWS Amplify. Auth features: User sign up, User sign in, Multi-factor Authentication, User sign-out.

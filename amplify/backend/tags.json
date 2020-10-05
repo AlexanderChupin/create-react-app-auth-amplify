@@ -1,0 +1,18 @@
+[
+  {
+    "Key": "user:Stack",
+    "Value": "{project-env}"
+  },
+  {
+    "Key": "user:Application",
+    "Value": "{project-name}"
+  },
+  {
+    "Key": "Owner",
+    "Value": "alexander.chupin"
+  },
+  {
+    "Key": "purpose",
+    "Value": "learning Amplify"
+  }
+]
