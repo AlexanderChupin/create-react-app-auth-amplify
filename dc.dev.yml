@@ -1,0 +1,18 @@
+version: '2'
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: df.dev
+    image: create-react-app-auth-amplify:dev
+    container_name: create-react-app-auth-amplify.dev.frontend
+    hostname: create-react-app-auth-amplify
+    environment:
+      NODE_ENV: "development"
+    volumes:
+      - ".:/home/create-react-app-auth-amplify"
+    ports:
+      - "3101:3000"
+      - "9230:9229"
+#   entrypoint: ["npm", "run", "debug_inspect"]
+    entrypoint: ["tail", "-f"]
