@@ -6,6 +6,7 @@
     "aws-amplify": "^2.2.0",
     "aws-amplify-react": "^3.1.1",
     "bootstrap": "^4.4.1",
+    "graphql-tag": "^2.11.0",
     "kind-of": "^6.0.3",
     "lodash": "^4.17.19",
     "react": "^16.13.1",
@@ -32,5 +33,14 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@testing-library/dom": "^7.24.5",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.0.4",
+    "@testing-library/user-event": "^12.1.7",
+    "@types/jest": "^26.0.14",
+    "jest-config": "^26.5.2",
+    "jest-environment-jsdom-sixteen": "^1.0.3"
+  }
 }

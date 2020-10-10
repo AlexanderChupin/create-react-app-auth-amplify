@@ -2,7 +2,14 @@
 - [Getting Started with Fullstack Continuous Deployments \- AWS Amplify](https://docs.aws.amazon.com/amplify/latest/userguide/deploy-backend.html)
 - [API \(GraphQL\) \- Overview \- Amplify Docs](https://docs.amplify.aws/cli/graphql-transformer/overview)
 - [API \(GraphQL\) \- Fetch data \- Amplify Docs](https://docs.amplify.aws/lib/graphqlapi/query-data/q/platform/js#using-aws-appsync-sdk)
-
+- [Getting Started · Jest](https://jestjs.io/docs/en/getting-started)
+- [Running Tests](https://create-react-app.dev/docs/running-tests/)
+- [How to use React Testing Library Tutorial \- RWieruch](https://www.robinwieruch.de/react-testing-library)
+- [How to Start Testing Your React Apps Using the React Testing Library and Jest](https://www.freecodecamp.org/news/8-simple-steps-to-start-testing-react-apps-using-react-testing-library-and-jest/)
+- [Get rid of "Unresolved function/method/variable" warning in Jest test files – IDEs Support \(IntelliJ Platform\) \| JetBrains](https://intellij-support.jetbrains.com/hc/en-us/community/posts/115000357324-Get-rid-of-Unresolved-function-method-variable-warning-in-Jest-test-files)
+- [Developing and testing GraphQL APIs, Storage and Functions with Amplify Framework Local Mocking features \| AWS Mobile Blog](https://aws.amazon.com/blogs/mobile/amplify-framework-local-mocking/)
+- [reactjs \- react typescript testing TypeError: MutationObserver is not a constructor \- Stack Overflow](https://stackoverflow.com/questions/61036156/react-typescript-testing-typeerror-mutationobserver-is-not-a-constructor)
+- [testing\-library/user\-event: 🐕 Simulate user events for react\-testing\-library](https://github.com/testing-library/user-event)
 
 
 # Create-react-app with AWS Amplify Auth 

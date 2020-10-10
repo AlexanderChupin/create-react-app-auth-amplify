@@ -13,6 +13,10 @@ ENV PATH=/root/.local/bin:$PATH
 #    && pip3 --version \
 #    && pip3 install awscli --upgrade --user
 
+# warning Your current version of Yarn is out of date. The latest version is "1.22.5", while you're on "1.22.4".
+#  info To upgrade, run the following command:
+curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+
 RUN npm install -g @aws-amplify/cli
 
 WORKDIR /home/create-react-app-auth-amplify
