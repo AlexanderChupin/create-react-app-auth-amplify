@@ -2,6 +2,7 @@
 - [Getting Started with Fullstack Continuous Deployments \- AWS Amplify](https://docs.aws.amazon.com/amplify/latest/userguide/deploy-backend.html)
 - [API \(GraphQL\) \- Overview \- Amplify Docs](https://docs.amplify.aws/cli/graphql-transformer/overview)
 - [API \(GraphQL\) \- Fetch data \- Amplify Docs](https://docs.amplify.aws/lib/graphqlapi/query-data/q/platform/js#using-aws-appsync-sdk)
+- [Getting Started – React](https://reactjs.org/docs/getting-started.html)
 - [Getting Started · Jest](https://jestjs.io/docs/en/getting-started)
 - [Running Tests](https://create-react-app.dev/docs/running-tests/)
 - [How to use React Testing Library Tutorial \- RWieruch](https://www.robinwieruch.de/react-testing-library)
@@ -11,6 +12,15 @@
 - [reactjs \- react typescript testing TypeError: MutationObserver is not a constructor \- Stack Overflow](https://stackoverflow.com/questions/61036156/react-typescript-testing-typeerror-mutationobserver-is-not-a-constructor)
 - [testing\-library/user\-event: 🐕 Simulate user events for react\-testing\-library](https://github.com/testing-library/user-event)
 
+- [Package \- puppeteer](https://developer.aliyun.com/mirror/npm/package/puppeteer)
+- [How to set up a Headless Chrome Node\.js server in Docker \- LogRocket Blog](https://blog.logrocket.com/how-to-set-up-a-headless-chrome-node-js-server-in-docker/)
+- [Getting Started Guide \| Node\.js](https://nodejs.org/en/docs/guides/getting-started-guide/)
+- [smooth\-code/jest\-puppeteer: Run your tests using Jest & Puppeteer 🎪✨](https://github.com/smooth-code/jest-puppeteer)
+- [Testing your JavaScript in a browser with Jest, Puppeteer, Express, and Webpack \| by James Anthony Bruno \| ITNEXT](https://itnext.io/testing-your-javascript-in-a-browser-with-jest-puppeteer-express-and-webpack-c998a37ef887)
+- [Learning How to Set Up Automated, Cross\-browser JavaScript Unit Testing — Philip Walton](https://philipwalton.com/articles/learning-how-to-set-up-automated-cross-browser-javascript-unit-testing/)
+
+- [Debugging React apps created with Create React App in WebStorm – WebStorm Blog \| JetBrains](https://blog.jetbrains.com/webstorm/2017/01/debugging-react-apps/?gclid=CjwKCAjww5r8BRB6EiwArcckC3u4EYW5xZ3wNRbX3aM0SCYIxr3K-baENrwUuIIUMjdLbwzzbFutoBoCmNoQAvD_BwE&gclsrc=aw.ds)
+- [Forms – React](https://reactjs.org/docs/forms.html)
 
 # Create-react-app with AWS Amplify Auth 
 

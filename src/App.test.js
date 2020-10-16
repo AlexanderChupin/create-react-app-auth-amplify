@@ -39,14 +39,17 @@ describe('alc Auth tests',()=> {
   }, 7000); //ALC. default jest timeout is 5000ms
 
   it('testing jest dom starting loading Auth scripts', async () => {
-    const { getByText } = render(<App />);
-    // debug document
-    //screen.debug()
+    const { getByText } = render(<App />); //{ pretendToBeVisual: true }
+    //debug document
+    screen.debug()
     await  waitFor (()=>expect(getByText('Loading...')).toBeInTheDocument())
+    //debug document
+    screen.debug()
   },10000);
 
+
   it('testing jest dom async \'Sign In\' button is displayed', async () => {
-    const {getByText} = render(<App/>);
+    const {getByText} = render(<App/>,{ pretendToBeVisual: false });//{ pretendToBeVisual: true }
     // debug document
     //screen.debug()
     await waitFor(() => expect(screen.getByPlaceholderText('Enter your username')).toBeInTheDocument())
@@ -55,6 +58,7 @@ describe('alc Auth tests',()=> {
     // fireEvent.change(screen.getByPlaceholderText('Enter your username'), {
     //   target: { value: 'smarten.pump@gmail.com' },
     // });
+
     expect(screen.getByPlaceholderText('Enter your username')).toHaveValue('smarten.pump@gmail.com')
     await userEvent.type(screen.getByPlaceholderText('Enter your password'), 'alex_Amplify2020')
     // fireEvent.change(screen.getByPlaceholderText('Enter your password'), {
@@ -63,6 +67,7 @@ describe('alc Auth tests',()=> {
     expect(screen.getByPlaceholderText('Enter your password')).toHaveValue('alex_Amplify2020')
     //expect(screen.getByPlaceholderText('Enter your password')).toHaveValue('alex_Amplify2020')
     // <button>Submit</button>
+    //screen.debug()
     fireEvent(
         getByText('Sign In'),
         new MouseEvent('click', {
@@ -75,10 +80,21 @@ describe('alc Auth tests',()=> {
     const regexEmail = /smarten.pump@gmail.com/i;
     const hello = /^Hello /i
     let finalRe = new RegExp(hello.source+regexEmail.source);
-    await waitFor(() => expect(getByText(finalRe)).toBeInTheDocument(),{"timeout":2000})
-    screen.debug()
+    await waitFor(() => expect(getByText(finalRe)).toBeInTheDocument(),{"timeout":5000})
+    //console.log(document.serialize())
 
-  });
+  },7000);
+
+  describe('alc JSDOM tests',()=>{
+    //https://github.com/jsdom/jsdom#basic-usage
+    it('ALC validate if JSDOM rendered',()=>{
+      const jsdom = require("jsdom");
+      const { JSDOM } = jsdom;
+      const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
+      console.log(dom.window.document.querySelector("p").textContent); // "Hello world"
+      console.log(dom.serialize());
+    })
+  })
 
 /*  it('testing jest dom async typing user name', async () => {
     const {getByText} = render(<App/>);
@@ -93,7 +109,7 @@ describe('alc Auth tests',()=> {
   }, 10000);*/
 })
 
-/*import gql from 'graphql-tag';
+import gql from 'graphql-tag';
 import AWSAppSyncClient, { AUTH_TYPE } from 'aws-appsync';
 import awsconfig from './aws-exports';
 
@@ -106,19 +122,39 @@ const client = new AWSAppSyncClient({
   }
 });
 
-var ret='';
+
 import { listTodos } from './graphql/queries';
-client.query({
-  query: gql(listTodos)
-}).then(({ data: { listTodos } }) => {
-  console.log(listTodos.items);
-  ret = listTodos.items;
+describe('AWSAppSyncClient methods', function() {
+  //ALC see An Async Example · Jest https://jestjs.io/docs/en/tutorial-async
+  it('listTodos using return promis method', function () {
+    let ret=null;
+    expect.assertions(2);
+    return client.query({
+      query: gql(listTodos)
+    }).then(({ data: { listTodos } }) => {
+      //console.log(listTodos.items);
+      ret = listTodos.items;
+      console.log('ALC return from the test:\n'+ JSON.stringify(ret, null, 2));
+      expect(ret).not.toBeNull()
+      expect(ret.length).toBeGreaterThanOrEqual(1)
+    });
+  });
+
+  it('listTodos using async/await method', async ()=>{
+    let ret=null;
+    expect.assertions(2);
+    await client.query({
+      query: gql(listTodos)
+    }).then(({ data: { listTodos } }) => {
+      //console.log(listTodos.items);
+      ret = listTodos.items;
+      //console.log('ALC return from the test:\n'+ JSON.stringify(ret, null, 2));
+      expect(ret).not.toBeNull()
+      expect(ret.length).toBeGreaterThanOrEqual(1)
+    });
+  });
 });
 
-describe('AWSAppSyncClient methods', function() {
-  it('listTodos', function () {
-    //console.log('ALC from the test'+listTodos.items);
-    let result = 2+3;
-    expect(result).toBe(5);
-  });
-});*/
+describe('AWSAppSyncClient methods using async/await method', function() {
+
+});
