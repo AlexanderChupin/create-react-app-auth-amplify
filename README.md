@@ -21,6 +21,8 @@
 
 - [Debugging React apps created with Create React App in WebStorm – WebStorm Blog \| JetBrains](https://blog.jetbrains.com/webstorm/2017/01/debugging-react-apps/?gclid=CjwKCAjww5r8BRB6EiwArcckC3u4EYW5xZ3wNRbX3aM0SCYIxr3K-baENrwUuIIUMjdLbwzzbFutoBoCmNoQAvD_BwE&gclsrc=aw.ds)
 - [Forms – React](https://reactjs.org/docs/forms.html)
+- [Mocking \| GraphQL Tools](https://www.graphql-tools.com/docs/mocking/)
+- [Testing JavaScript with Kent C\. Dodds](https://testingjavascript.com/)
 
 # Create-react-app with AWS Amplify Auth 
 

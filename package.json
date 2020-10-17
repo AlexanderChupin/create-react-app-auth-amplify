@@ -24,7 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watch --env=jest-environment-jsdom-sixteen --runInBand",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen --runInBand",
     "debug": "react-scripts --inspect-brk=0.0.0.0:9229 start --runInBand --no-cache",
     "eject": "react-scripts eject"
   },
@@ -39,6 +39,8 @@
   ],
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.10.4",
+    "@graphql-tools/mock": "^6.2.4",
+    "@graphql-tools/schema": "^6.2.4",
     "@testing-library/dom": "^7.24.5",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.4",
@@ -47,6 +49,7 @@
     "@types/jest": "^26.0.14",
     "@types/jest-environment-puppeteer": "^4.4.0",
     "@types/puppeteer": "^3.0.2",
+    "graphql": "^15.3.0",
     "jest-config": "^26.5.2",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "jest-puppeteer": "^4.4.0",

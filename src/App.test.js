@@ -16,6 +16,7 @@ import {
   fireEvent
 } from '@testing-library/dom'
 
+
 describe('alc smoke tests',()=>{
   it('renders without crashing', () => {
     const div = document.createElement('div');
@@ -47,9 +48,8 @@ describe('alc Auth tests',()=> {
     screen.debug()
   },10000);
 
-
   it('testing jest dom async \'Sign In\' button is displayed', async () => {
-    const {getByText} = render(<App/>,{ pretendToBeVisual: false });//{ pretendToBeVisual: true }
+    const {getByText} = render(<App/>);//{ pretendToBeVisual: true }
     // debug document
     //screen.debug()
     await waitFor(() => expect(screen.getByPlaceholderText('Enter your username')).toBeInTheDocument())
@@ -84,7 +84,6 @@ describe('alc Auth tests',()=> {
     //console.log(document.serialize())
 
   },7000);
-
   describe('alc JSDOM tests',()=>{
     //https://github.com/jsdom/jsdom#basic-usage
     it('ALC validate if JSDOM rendered',()=>{
@@ -109,52 +108,4 @@ describe('alc Auth tests',()=> {
   }, 10000);*/
 })
 
-import gql from 'graphql-tag';
-import AWSAppSyncClient, { AUTH_TYPE } from 'aws-appsync';
-import awsconfig from './aws-exports';
 
-const client = new AWSAppSyncClient({
-  url: awsconfig.aws_appsync_graphqlEndpoint,
-  region: awsconfig.aws_appsync_region,
-  auth: {
-    type: AUTH_TYPE.API_KEY, // or type: awsconfig.aws_appsync_authenticationType,
-    apiKey: awsconfig.aws_appsync_apiKey,
-  }
-});
-
-
-import { listTodos } from './graphql/queries';
-describe('AWSAppSyncClient methods', function() {
-  //ALC see An Async Example · Jest https://jestjs.io/docs/en/tutorial-async
-  it('listTodos using return promis method', function () {
-    let ret=null;
-    expect.assertions(2);
-    return client.query({
-      query: gql(listTodos)
-    }).then(({ data: { listTodos } }) => {
-      //console.log(listTodos.items);
-      ret = listTodos.items;
-      console.log('ALC return from the test:\n'+ JSON.stringify(ret, null, 2));
-      expect(ret).not.toBeNull()
-      expect(ret.length).toBeGreaterThanOrEqual(1)
-    });
-  });
-
-  it('listTodos using async/await method', async ()=>{
-    let ret=null;
-    expect.assertions(2);
-    await client.query({
-      query: gql(listTodos)
-    }).then(({ data: { listTodos } }) => {
-      //console.log(listTodos.items);
-      ret = listTodos.items;
-      //console.log('ALC return from the test:\n'+ JSON.stringify(ret, null, 2));
-      expect(ret).not.toBeNull()
-      expect(ret.length).toBeGreaterThanOrEqual(1)
-    });
-  });
-});
-
-describe('AWSAppSyncClient methods using async/await method', function() {
-
-});
